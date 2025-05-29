@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sorriso Perfeito - Consultório Odontológico</title>
+
+  <!-- Fonte Google -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <!-- Link para o CSS -->
+  <link rel="stylesheet" href="styles/style.css">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <!-- Script JavaScript -->
+  <script src="scripts/scripts.js" defer></script>
+</head>
+
+<body>
+  <!-- Cabeçalho com logotipo e menu de navegação -->
+  <header>
+    <img src="assets/img/logo.png" alt="Logo Sorriso Perfeito" class="logo">
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#servicos">Serviços</a></li>
+        <li><a href="#galeria">Galeria</a></li>
+        <li><a href="#depoimentos">Depoimentos</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section id="home">
+      <h1>Bem-vindo à Sorriso Perfeito</h1>
+      <p>Seu sorriso, nosso compromisso. Conheça nossos serviços odontológicos especializados.</p>
+    </section>
+
+
+    <section id="servicos">
+      <h2>Serviços</h2>
+      <div class="cards-servicos">
+        <div class="card-servico">
+          <img src="assets/img/clareamento.jpg" alt="Clareamento Dental">
+          <span class="card-titulo">Clareamento</span>
+        </div>
+        <div class="card-servico">
+          <img src="assets/img/implante.jpg" alt="Implantes">
+          <span class="card-titulo">Implante</span>
+        </div>
+        <div class="card-servico">
+          <img src="assets/img/aparelho.jpg" alt="Aparelhos Ortodônticos">
+          <span class="card-titulo">Aparelho</span>
+        </div>
+        <div class="card-servico">
+          <img src="assets/img/limpeza.jpg" alt="Limpeza e Prevenção">
+          <span class="card-titulo">Limpeza</span>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="galeria">
+      <h2>Galeria de Sorrisos</h2>
+      <div class="galeria">
+        <img src="assets/img/sorriso1.jpg" alt="Paciente feliz 1">
+        <img src="assets/img/sorriso2.jpg" alt="Paciente feliz 2">
+        <img src="assets/img/sorriso3.jpg" alt="Paciente feliz 3">
+      </div>
+    </section>
+
+
+    <section id="depoimentos">
+      <h2>Depoimentos</h2>
+      <blockquote>“O atendimento foi incrível, me senti muito acolhida!” - Ana Paula</blockquote>
+      <blockquote>“Recuperei minha confiança com meu novo sorriso. Obrigado, equipe Sorriso Perfeito!” - Carlos Silva
+      </blockquote>
+    </section>
+
+
+    <section id="contato">
+      <h2>Contato</h2>
+      <form id="form-contato">
+        <input type="text" placeholder="Seu nome" required>
+        <input type="email" placeholder="Seu e-mail" required>
+        <textarea placeholder="Sua mensagem" required></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+      <div id="mensagem-sucesso" style="display:none; color:green; margin-top:1rem;">
+        Mensagem enviada com sucesso!Em breve entraremos em contato.
+      </div>
+    </section>
+  </main>
+
+
+  <footer>
+    <p><i class="fas fa-phone"></i> (51) 1234-5678</p>
+    <p><i class="fas fa-envelope"></i> contato@sorrisoperfeito.com</p>
+    <a href="#"><i class="fab fa-instagram"></i> Instagram</a>
+    <a href="#"><i class="fab fa-facebook"></i> Facebook</a>
+    <p>&copy; 2025 Sorriso Perfeito. Todos os direitos reservados.</p>
+  </footer>
+</body>
+
+</html>
