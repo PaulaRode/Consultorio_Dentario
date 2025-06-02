@@ -57,3 +57,5 @@ Este projeto foi desenvolvido utilizando **HTML5**, **CSS3** e **JavaScript** e 
 │   └── fonts/            # (Opcional) Fontes externas
 └── README.md             # Documentação do projeto
 
+🔐 Segurança:
+Este projeto restringe o uso do EmailJS ao domínio do GitHub Pages configurado, prevenindo uso não autorizado das credenciais públicas.
