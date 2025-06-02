@@ -1,11 +1,12 @@
 # Projeto Sorriso Perfeito - Landing Page
+![Banner do Projeto](https://via.placeholder.com/1200x300.png?text=Consultório+Dentário+-+Sorria+com+Confiança)
 
-![Banner do Projeto](https://via.placeholder.com/1200x300.png?text=Sorriso+Perfeito+-+Landing+Page+Projeto)
 
 ## Sobre o Projeto
 
 A **Sorriso Perfeito** é uma clínica odontológica fictícia. Este projeto consiste em criar uma landing page responsiva, moderna e funcional para divulgar seus serviços, depoimentos de clientes e facilitar o contato com potenciais pacientes. 
 
+## Tecnologias
 Este projeto foi desenvolvido utilizando **HTML5**, **CSS3** e **JavaScript** e serve como base para futura integração com **PHP**.
 
 ---
@@ -56,4 +57,3 @@ Este projeto foi desenvolvido utilizando **HTML5**, **CSS3** e **JavaScript** e 
 │   └── fonts/            # (Opcional) Fontes externas
 └── README.md             # Documentação do projeto
 
-# Consultorio_Dentario

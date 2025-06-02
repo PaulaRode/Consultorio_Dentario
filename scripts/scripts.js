@@ -1,4 +1,9 @@
-// Aplica rolagem suave ao clicar nos links do menu
+// Inicialização do EmailJS
+(function () {
+  emailjs.init("ZUT0iRDKIF_YjmkVE"); // substitua por sua chave real se necessário
+})();
+
+// Rolagem suave para links
 document.querySelectorAll('a[href^="#"]').forEach(link => {
   link.addEventListener('click', function (e) {
     e.preventDefault();
@@ -7,31 +12,86 @@ document.querySelectorAll('a[href^="#"]').forEach(link => {
   });
 });
 
-// Validação simples do formulário
-document.querySelector('form').addEventListener('submit', function (e) {
-  const nome = this.querySelector('input[type="text"]').value.trim();
-  const email = this.querySelector('input[type="email"]').value.trim();
-  const msg = this.querySelector('textarea').value.trim();
-
-  if (!nome || !email || !msg) {
-    e.preventDefault();
-    alert('Por favor, preencha todos os campos.');
+// MENU HAMBURGUER
+document.addEventListener('DOMContentLoaded', function () {
+  const btn = document.getElementById('menu-btn');
+  const menu = document.getElementById('menu-nav').querySelector('ul');
+  if (btn && menu) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('ativo');
+    });
   }
-});
 
-// Exibe uma mensagem de agradecimento ao enviar o formulário
-document.addEventListener('DOMContentLoaded', function() {
-  const form = document.getElementById('form-contato');
-  const msg = document.getElementById('mensagem-sucesso');
+  // Formulário
+  const form = document.getElementById("form-contato");
+  const toast = document.getElementById("toast");
 
-  if(form) {
-    form.addEventListener('submit', function(e) {
-      e.preventDefault(); // impede o envio real
-      msg.style.display = 'block'; // mostra a mensagem
-      form.reset(); // limpa o formulário
-      setTimeout(() => {
-        msg.style.display = 'none'; // esconde após 3 segundos
-      }, 3000);
+  if (form) {
+    form.addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      // Validação simples
+      const nome = form.querySelector('input[name="name"]').value.trim();
+      const email = form.querySelector('input[name="email"]').value.trim();
+      const msg = form.querySelector('textarea[name="message"]').value.trim();
+
+      if (!nome || !email || !msg) {
+        alert('Por favor, preencha todos os campos.');
+        return;
+      }
+
+      // Preencher campo oculto com data e hora formatada corretamente
+      const agora = new Date();
+
+      const dia = String(agora.getDate()).padStart(2, '0');
+      const mes = String(agora.getMonth() + 1).padStart(2, '0');
+      const ano = agora.getFullYear();
+
+      const hora = String(agora.getHours()).padStart(2, '0');
+      const minutos = String(agora.getMinutes()).padStart(2, '0');
+
+      const dataHoraFormatada = `${dia}/${mes}/${ano} às ${hora}:${minutos}`;
+
+      const tempoInput = document.getElementById("tempo");
+      if (tempoInput) {
+        tempoInput.value = dataHoraFormatada;
+      }
+
+      // Envio com EmailJS
+      emailjs.sendForm('service_msag1qq', 'template_xisqvqp', form)
+        .then(() => {
+          toast.classList.add("show");
+          form.reset();
+          setTimeout(() => {
+            toast.classList.remove("show");
+          }, 4000);
+        })
+        .catch((error) => {
+          alert("Erro ao enviar mensagem. Tente novamente.");
+          console.error('Erro EmailJS:', error);
+        });
     });
   }
 });
+
+// Botão "Voltar ao topo"
+const btnTopo = document.getElementById("btn-topo");
+
+window.onscroll = function () {
+  if (btnTopo) {
+    if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+      btnTopo.style.display = "block";
+    } else {
+      btnTopo.style.display = "none";
+    }
+  }
+};
+
+if (btnTopo) {
+  btnTopo.addEventListener("click", function () {
+    window.scrollTo({
+      top: 0,
+      behavior: "smooth"
+    });
+  });
+}
